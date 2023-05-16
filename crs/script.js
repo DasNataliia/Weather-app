@@ -7,13 +7,13 @@ function search(event) {
   event.preventDefault();
   let cityInput = document.querySelector("#city-input");
   let city = cityInput.value;
-  let h2 = document.querySelector("h2");
+  let h3 = document.querySelector("h3");
   let temp = document.querySelector("h1");
 
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
   axios.get(apiUrl).then(function (response) {
-    h2.innerHTML = response.data.name;
+    h3.innerHTML = response.data.name;
     temp.innerHTML = `${Math.round(response.data.main.temp)} ℃`;
   });
 }
@@ -38,8 +38,8 @@ let currentlyDate = document.querySelector("#date");
 currentlyDate.innerHTML = `${days[day]} ${hours}:${minutes}`;
 
 function showWeather(response) {
-  let h2 = document.querySelector("h2");
-  h2.innerHTML = response.data.name;
+  let h3 = document.querySelector("h3");
+  h3.innerHTML = response.data.name;
   let temp = document.querySelector("h1");
   temp.innerHTML = `${Math.round(response.data.main.temp)} ℃`;
 }

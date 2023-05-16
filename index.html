@@ -44,15 +44,24 @@
       </form>
       <br />
       <h1 class="celsius" id="temperature">🌥 17℃</h1>
-      <span class="units">
-        <a href="#" id="celcius-link"> °C </a> |
-        <a href="#" id="fahrenheit-link"> °F </a>
-      </span>
-      <h2 id="city">London</h2>
-      <ul class="weather">
-        <li id="date">Sunday 22:23</li>
-        <li>Partly Cloudy</li>
-      </ul>
+      <div class="weather-app">
+        <div class="row">
+          <div class="col-6">
+            <h3 id="city">London</h3>
+            <ul>
+              <li>
+                <span id="date"></span>
+              </li>
+            </ul>
+          </div>
+          <div class="col-6">
+            <ul>
+              <li>Humidity: 62 <span id="humidity"></span>%</li>
+              <li>Wind: 2 <span id="wind"></span> km/h</li>
+            </ul>
+          </div>
+        </div>
+      </div>
       <br />
       <div class="row">
         <div class="col">Monday</div>
