@@ -11,6 +11,7 @@ body {
   border-radius: 10px;
 }
 #icon {
+  display: block;
   width: 50px;
   height: 50px;
 }
@@ -20,23 +21,22 @@ h1 {
   font-weight: bold;
 }
 .weather-temperature img {
+  display: block;
   margin-right: 5px;
   height: 64px;
   width: 64px;
 }
-.weather-temperature strong {
-  text-align: centers;
-  color: rgb(33, 33, 33);
-  font-size: 64px;
-  line-height: 1;
-  font-weight: 400;
+.clearfix {
+  text-align: center;
+  display: block;
 }
+
 #date {
   font-size: 17px;
   color: rgb(69, 69, 69);
 }
 #description {
-  margin-left: -70px;
+  margin-left: -30px;
   padding: 0;
 }
 li {

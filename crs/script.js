@@ -25,22 +25,20 @@ function displayTemperature(response) {
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
   let dateElement = document.querySelector("#date");
- let iconElement = document.querySelector(".weather-temperature img");
-
+  let iconElement = document.querySelector("#icon");
+  let iconUrl = `https://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`;
 
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed * 3.6);
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
-  iconElement.setAttribute(
-    "src",
-    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
-  iconElement.setAttribute("alt", response.data.weather[0].description);
+  iconElement.setAttribute("src", iconUrl);
 }
+
 axios.get(apiWeatherUrl).then(function (response) {
   displayTemperature(response);
 });
+
 
 
 let searchSity = document.querySelector("#search-form");
@@ -66,8 +64,9 @@ currentlyDate.innerHTML = `${days[day]} ${hours}:${minutes}`;
 function showWeather(response) {
   let h3 = document.querySelector("h3");
   h3.innerHTML = response.data.name;
-  let temp = document.querySelector("h1");
+  let temp = document.querySelector("#temperature");
   temp.innerHTML = `${Math.round(response.data.main.temp)} ℃`;
+  displayTemperature(response);
 }
 
 //current
