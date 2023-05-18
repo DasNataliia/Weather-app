@@ -43,24 +43,30 @@
         </div>
       </form>
       <br />
-      <h1 class="celsius" id="temperature">🌥 17℃</h1>
+      <div class="clearfix weather-temperature">
+        <img src="" alt="Weather Icon" id="icon" class="float-left" />
+        <div class="float-left">
+          <h1 id="temperature">17℃</h1>
+        </div>
+      </div>
+
       <div class="weather-app">
         <div class="row">
           <div class="col-6">
             <h3 id="city">London</h3>
             <ul>
-              <li>
-                <span id="date"></span>
-              </li>
+              <li><span id="date"></span></li>
+              <li id="description"></li>
             </ul>
           </div>
           <div class="col-6">
             <ul>
-              <li>Humidity: 62 <span id="humidity"></span>%</li>
-              <li>Wind: 2 <span id="wind"></span> km/h</li>
+              <li>Humidity: <span id="humidity"></span>%</li>
+              <li>Wind: <span id="wind"></span> km/h</li>
             </ul>
           </div>
         </div>
+        <div class="weather-forecast" id="forecast"></div>
       </div>
       <br />
       <div class="row">
