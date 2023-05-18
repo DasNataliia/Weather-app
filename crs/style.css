@@ -20,6 +20,20 @@ h1 {
   font-size: 64px;
   font-weight: bold;
 }
+.weather-temperature {
+  display: flex;
+  align-items: center;
+}
+
+.weather-temperature h1 {
+  margin-right: 10px;
+}
+
+.float-left {
+  display: flex;
+  align-items: center;
+}
+
 .weather-temperature img {
   display: block;
   margin-right: 5px;
@@ -30,7 +44,9 @@ h1 {
   text-align: center;
   display: block;
 }
-
+.celsius-link{
+  display: inline;
+}
 #date {
   font-size: 17px;
   color: rgb(69, 69, 69);
