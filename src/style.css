@@ -22,31 +22,36 @@ h1 {
   font-weight: bold;
 }
 .weather-temperature {
-  display: block;
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
 
 .weather-temperature h1 {
   margin-right: 10px;
- 
 }
+
 .float-left {
   display: flex;
   align-items: center;
 }
 
 .weather-temperature img {
-  display: block;
   margin-right: 5px;
   height: 64px;
   width: 64px;
 }
+
 .clearfix {
   text-align: center;
-  display: block;
 }
-.celsius-link{
-  display: inline;
+
+.weather-app {
+  text-align: center;
+}
+
+.weather-app .row {
+  justify-content: center;
 }
 #date {
   font-size: 17px;
