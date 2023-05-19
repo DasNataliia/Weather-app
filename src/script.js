@@ -1,8 +1,5 @@
-let apiWeatherUrl =
-  "https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid=7401c74fb46516853ce6e1c8d00fac73&units=metric";
-
 let apiKey = "7401c74fb46516853ce6e1c8d00fac73";
-
+let celsiusTemperature = null;
 
 function search(event) {
   event.preventDefault();
@@ -14,7 +11,7 @@ function search(event) {
 
   axios.get(apiUrl).then(function (response) {
     h3.innerHTML = response.data.name;
-    temp.innerHTML = `${Math.round(response.data.main.temp)} ℃`;
+    temp.innerHTML = `${Math.round(response.data.main.temp)}℃`;
 
     displayTemperature(response); 
   });
@@ -28,7 +25,7 @@ function displayTemperature(response) {
   let iconElement = document.querySelector("#icon");
   let iconUrl = `https://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`;
 
-celsiusTemperature= response.date.main.temp;
+celsiusTemperature= response.data.main.temp;
 
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
@@ -37,37 +34,35 @@ celsiusTemperature= response.date.main.temp;
   iconElement.setAttribute("src", iconUrl);
 }
 
-axios.get(apiWeatherUrl).then(function (response) {
-  displayTemperature(response);
-});
-
-
 
 let searchSity = document.querySelector("#search-form");
 searchSity.addEventListener("submit", search);
 
 // date
-let now = new Date();
-let hours = now.getHours();
-let minutes = now.getMinutes();
-let day = now.getDay();
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday"
-];
-let currentlyDate = document.querySelector("#date");
-currentlyDate.innerHTML = `${days[day]} ${hours}:${minutes}`;
-
+function formatDate(timestamp){
+  let now = new Date(timestamp);
+  let hours = now.getHours();
+  let minutes = now.getMinutes();
+  let day = now.getDay();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+  ];
+  let currentlyDate = document.querySelector("#date");
+  currentlyDate.innerHTML = `${days[day]} ${hours}:${minutes}`;
+  return `${days[day]} ${hours}:${minutes}`
+}
+formatDate(new Date())
 function showWeather(response) {
   let h3 = document.querySelector("h3");
   h3.innerHTML = response.data.name;
   let temp = document.querySelector("#temperature");
-  temp.innerHTML = `${Math.round(response.data.main.temp)} ℃`;
+  temp.innerHTML = `${Math.round(response.data.main.temp)}℃`;
   displayTemperature(response);
 }
 
@@ -100,10 +95,9 @@ function displayCelsiusTemperature(event) {
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
-let celsiusTemperature = null;
 
 let form = document.querySelector("#search-form");
-form.addEventListener("submit", handleSubmit);
+form.addEventListener("submit", search);
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);

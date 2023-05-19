@@ -12,7 +12,7 @@
       integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="crs/style.css" />
+    <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
     <div class="container">
@@ -44,15 +44,15 @@
       </form>
       <br />
       <div class="row">
-        <div class="col-6">
+        <div class="col-7">
           <div class="clearfix weather-temperature">
-            <img src="" alt="Clear" id="icon" class="float-left" />
+            <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="Clear" id="icon" class="float-left" />
             <div class="float-left">
               <h1 id="temperature">17</h1>
-              <div class="float-left" id="unitsS"
-                ><a href="#" id="celsius-link" class="active">°C</a> |
-                <a href="#" id="fahrenheit-link">°F</a></div
-              >
+              <div class="units">
+                <a href="#" id="celsius-link" class="active">°C</a> |
+                <a href="#" id="fahrenheit-link">°F</a>
+              </div>
             </div>
           </div>
         </div>
@@ -69,8 +69,8 @@
           </div>
           <div class="col-6">
             <ul>
-              <li>Humidity: <span id="humidity"></span>%</li>
-              <li>Wind: <span id="wind"></span> km/h</li>
+              <li>Humidity: <span id="humidity">54</span>%</li>
+              <li>Wind: <span id="wind"></span>2 km/h</li>
             </ul>
           </div>
         </div>
@@ -107,6 +107,6 @@
         <a href="https://github.com/DasNataliia/Weather-app.git"> GitHub </a>
       </p>
     </div>
-    <script src="crs/script.js"></script>
+    <script src="src/script.js"></script>
   </body>
 </html>
