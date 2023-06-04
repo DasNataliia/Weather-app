@@ -164,3 +164,11 @@ celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 let buttonLink = document.querySelector("#current");
 buttonLink.addEventListener("click", currentLocation);
+
+
+
+
+
+
+
+
